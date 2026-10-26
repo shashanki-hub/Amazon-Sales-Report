@@ -1,0 +1,155 @@
+{
+  "name": "Amazon Sales - Pastel Blue and Yellow",
+  "dataColors": [
+    "#1687E8",
+    "#FFD84D",
+    "#0058A3",
+    "#9FD3F7",
+    "#FFB8C2",
+    "#B8E8B5",
+    "#B9C7FF",
+    "#FF9F68",
+    "#6B78D6",
+    "#57B8A8",
+    "#E7A7D8",
+    "#8A9AA8"
+  ],
+  "background": "#EAF0FB",
+  "foreground": "#172033",
+  "tableAccent": "#1687E8",
+  "good": "#2E9D68",
+  "bad": "#D64545",
+  "neutral": "#FFD84D",
+  "maximum": "#0058A3",
+  "center": "#FFD84D",
+  "minimum": "#CFEAFF",
+  "null": "#DADCE0",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "color": "#102A56",
+      "fontSize": 32
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "color": "#172033",
+      "fontSize": 14
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "color": "#172033",
+      "fontSize": 12
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "color": "#596579",
+      "fontSize": 10
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 100
+          }
+        ],
+        "border": [
+          {
+            "show": false,
+            "color": {
+              "solid": {
+                "color": "#D7E0EF"
+              }
+            },
+            "radius": 12
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "#172033"
+              }
+            },
+            "fontSize": 14,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "outspacePane": [
+          {
+            "fontFamily": "Segoe UI",
+            "border": false
+          }
+        ],
+        "filterCard": [
+          {
+            "$id": "Available",
+            "border": false,
+            "fontFamily": "Segoe UI"
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [
+          {
+            "color": {
+              "solid": {
+                "color": "#102A56"
+              }
+            },
+            "fontSize": 32,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "categoryLabels": [
+          {
+            "color": {
+              "solid": {
+                "color": "#596579"
+              }
+            },
+            "fontSize": 11
+          }
+        ],
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 100
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#EAF0FB"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}
