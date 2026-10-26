@@ -1,131 +1,129 @@
 # Amazon Sales Analytics Dashboard
 
-An end-to-end sales analytics project using **Python (Pandas)**, **SQL
-Server**, and **Power BI** to clean, analyze, and visualize Amazon sales
-data.
+An end-to-end data analytics project using **Python (Pandas), SQL Server, and Power BI** to clean, analyze, and visualize Amazon sales data.
 
-## Project Overview
+## 📊 Dashboard Preview
 
-This project explores Amazon order and sales data to understand revenue
-patterns, product-category performance, order volumes, fulfilment
-channels, and shipping-region trends. The workflow combines data
-cleaning with SQL querying and an interactive Power BI dashboard.
+![Amazon Sales Dashboard](dashboard/Amazon-Dashboard.png)
 
-## Dashboard Preview
+## 📌 Project Overview
 
-Add your dashboard screenshot to the repository (for example,
-`dashboard/Amazon-Dashboard.png`) and update the image path below.
+This project analyzes Amazon sales data to understand revenue trends, product category performance, order volumes, fulfilment channels, and shipping-region patterns.
 
-![Amazon Sales Analytics Dashboard](dashboard/Amazon-Dashboard.png)
+The project combines Python-based data cleaning, SQL queries, and an interactive Power BI dashboard to turn raw sales data into meaningful business insights.
 
-## Tools & Technologies
+## 🛠️ Tools & Technologies
 
--   **Python:** Pandas, NumPy
--   **Database:** Microsoft SQL Server / SSMS
--   **Data Visualization:** Microsoft Power BI
--   **Data Format:** CSV
+- **Python:** Pandas, NumPy
+- **Database:** Microsoft SQL Server, SSMS
+- **Data Visualization:** Microsoft Power BI
+- **Data Format:** CSV
+- **Version Control:** Git and GitHub
 
-## Workflow
+## 📈 Dashboard Highlights
 
-1.  **Data inspection:** Reviewed dataset dimensions, column types,
-    missing values, distinct values, and duplicate records.
-2.  **Data cleaning with Pandas:** Standardized column names and text,
-    converted dates and numeric fields where possible, checked duplicate
-    rows, and exported a cleaned CSV plus quality reports.
-3.  **SQL analysis:** Prepared queries to retrieve and filter records,
-    aggregate sales, compare categories, inspect order statuses, and
-    analyze geographic performance.
-4.  **Power BI dashboard:** Built KPI cards and visuals to explore
-    revenue, quantity, unique orders, unique shipping cities, category
-    performance, monthly sales, fulfilment, size, and state-level sales.
+The dashboard includes the following KPIs and visualizations:
 
-## Dashboard KPIs
+- **Total Revenue:** Sum of the `Amount` column
+- **Total Quantity:** Total quantity ordered
+- **Total Orders:** Distinct order count
+- **Unique Cities:** Number of distinct shipping cities
+- **Delivered Orders:** Distinct orders classified as delivered
+- Top 5 product categories by revenue
+- Monthly revenue trends
+- Fulfilment channel distribution
+- Revenue by product size
+- Revenue by shipping state
 
--   **Total Revenue:** Sum of the `Amount` field.
--   **Total Quantity:** Sum of the `Qty` field.
--   **Total Orders:** Distinct count of `Order ID`.
--   **Unique Cities:** Distinct count of `ship-city`.
--   **Delivered Orders:** Distinct orders classified as delivered by the
-    dataset's status field.
+## 🧹 Data Cleaning with Pandas
 
-> **Metric note:** Revenue is based on the dataset's `Amount` column and
-> should be interpreted as reported sales amount, not profit. The
-> dataset does not provide a customer ID in the fields used here, so
-> unique cities are not a customer count.
+The dataset was inspected and cleaned using Pandas.
 
-## Repository Structure
+Key steps included:
 
-``` text
-amazon-sales-analytics-dashboard/
+- Examining dataset dimensions and data types
+- Identifying missing and blank values
+- Standardizing column names and text values
+- Converting dates and numeric columns
+- Checking duplicate records
+- Investigating invalid or suspicious quantities and amounts
+- Exporting the cleaned dataset and data-quality reports
+
+Missing values and suspicious records were reviewed rather than automatically replaced with fabricated values.
+
+## 🗄️ SQL Analysis
+
+SQL Server was used to retrieve, filter, update, and analyze sales data.
+
+The SQL workflow includes:
+
+- Selecting all records and specific columns
+- Filtering records using conditions
+- Retrieving distinct categories and values
+- Investigating missing values and duplicates
+- Analyzing sales and order information
+
+## 💡 Business Questions Explored
+
+- Which product categories generate the highest reported sales?
+- How does revenue change over time?
+- Which fulfilment channel handles the most records?
+- Which product sizes contribute most to sales?
+- Which shipping states have the highest reported sales?
+- What data-quality issues should be investigated before analysis?
+
+## 📁 Project Structure
+
+```text
+Amazon-Sales-Report/
 ├── dashboard/
 │   ├── Amazon Sales Dashboard.pbix
 │   └── Amazon-Dashboard.png
+├── data/
+│   ├── Amazon Sale Report(Uncleaned).csv
+│   └── Amazon_Sales_Cleaned.csv
 ├── python/
+│   ├── Amazon_Sales_Theme.json
 │   └── Data Cleaning (Pandas).py
 ├── sql/
 │   └── SQLQuery1.sql
-├── data/
-│   └── Amazon_Sales_Cleaned.csv
+├── Amazon Logo.png
+├── Amazon Dashboard design by Shashanki Rawat.png
 └── README.md
 ```
 
-Adjust the filenames and folders to match the files you actually upload.
+## 🚀 How to Use This Project
 
-## Key Analysis Questions
+1. Clone or download this repository.
+2. Install Python dependencies:
 
--   Which product categories contribute the most sales amount?
--   How does sales amount change by month?
--   Which fulfilment channel has the most records or orders?
--   Which sizes and shipping states contribute most to sales amount?
--   How many distinct orders are present, and how are they classified by
-    status?
--   Which data-quality issues require review before analysis?
+   ```bash
+   pip install pandas numpy
+   ```
 
-## Data Quality Notes
+3. Run the Pandas cleaning script with the source CSV in the expected location.
+4. Open `SQLQuery1.sql` in SQL Server Management Studio and adjust the table name to match your database.
+5. Open `Amazon Sales Dashboard.pbix` in Power BI Desktop.
+6. If prompted, update the data source path to your local cleaned CSV.
 
--   The original dataset contains **128,975 rows and 21 columns**.
--   The initial audit found **no exact duplicate rows**.
--   Missing values and unparseable dates were inspected before deciding
-    how to handle them.
--   Zero quantities and zero amounts were retained for review rather
-    than automatically removed.
--   Repeated order IDs were not treated as duplicates because an order
-    may contain multiple product lines.
--   Review `Amazon_Rows_To_Review.csv` and the quality report before
-    relying on affected records.
+## 📌 Data Quality Notes
 
-## How to Reproduce
+- The original dataset contains **128,975 rows and 21 columns**.
+- The initial audit identified **zero exact duplicate rows**.
+- Some fields contain missing values that require appropriate handling.
+- Date parsing should be verified before drawing conclusions from monthly trends.
+- Zero quantities and amounts should be investigated rather than automatically deleted.
+- Repeated order IDs do not necessarily indicate duplicates because an order may contain multiple product lines.
 
-1.  Clone or download this repository.
+## ⚠️ Limitations
 
-2.  Install Python dependencies:
+- Revenue represents the sum of the source dataset's `Amount` field; it is not profit.
+- Unique shipping cities do not represent unique customers.
+- Results depend on the quality and completeness of the original dataset.
+- Data-quality issues should be reviewed before using the results for business decisions.
 
-    ``` bash
-    pip install pandas numpy
-    ```
-
-3.  Place the source CSV in the project folder and run the Pandas
-    cleaning script.
-
-4.  Open the SQL script in SSMS and update table or column names if your
-    imported schema differs.
-
-5.  Open the `.pbix` file in Power BI Desktop. If prompted, update the
-    data source path to your local cleaned CSV.
-
-## Limitations
-
--   The analysis reflects the fields available in the source dataset.
--   Sales amount does not equal profit because cost data is not
-    included.
--   Unique shipping cities are a geographic metric, not a customer
-    metric.
--   Date parsing and any unresolved data-quality issues should be
-    verified before using time-based conclusions.
-
-## Author
+## 👩‍💻 Author
 
 **Shashanki Rawat**
 
-Built as a data analytics portfolio project using Python, SQL Server,
-and Power BI.
+Data analytics portfolio project built using Python, SQL Server, and Power BI.
